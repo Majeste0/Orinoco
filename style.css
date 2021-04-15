@@ -1,0 +1,129 @@
+body {
+  margin: 0px;
+  font-family: 'Hind', sans-serif;
+}
+
+.logo {
+  display: block;
+  height: 200px;
+  margin: auto;
+}
+
+.bg_logo {
+  height: 200px;
+  display: block;
+  width: 100%;
+  z-index: -10;
+  position: absolute;
+  background-color: #f3e9f1;
+  border-bottom: solid 1px;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 5%;
+  width: 7%;
+  margin-top: 159px;
+}
+
+.home, #panier, .home:visited, .panier:visited {
+  color: #000000;
+}
+
+.nb_panier {
+  background-color: #f44336;
+  border-radius: 50%;
+}
+
+h2 {
+  position: relative;
+  font-size: 33px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.underline {
+  padding: 1.5px;
+  background-color: #000000;
+  position: relative;
+  width: 258px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: -10px;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+h1 {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.container img {
+  height: 200px;
+  width: 250px;
+  display: block;
+  margin: auto;
+}
+
+.container p {
+  margin: auto;
+  font-size: 26px;
+}
+
+.container .description {
+  text-align: center;
+  cursor: pointer;
+  border: black solid 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  margin-top: 40px;
+}
+
+footer {
+  background-color: #434A53;
+  padding-bottom: -20px;
+  margin-top: 50px;
+  color: white;
+}
+
+footer h3 {
+  font-size: 30px;
+  padding-left: 2%;
+  margin: 0;
+}
+
+footer p {
+  font-size: 20px;
+  line-height: 2;
+  margin: 0;
+  padding-left: 4%;
+}
+/*# sourceMappingURL=style.css.map */
