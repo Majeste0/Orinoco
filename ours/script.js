@@ -82,6 +82,7 @@ fetch('http://localhost:3000/api/teddies/' + localStorage.getItem("idCourrant"))
 	el[el.length-1].appendChild(Delete);
 	Delete.onclick = () => {
 	console.log(panier.length);
+	localStorage.removeItem("panier");
 	location.reload();
 	}
 

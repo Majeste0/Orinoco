@@ -13,11 +13,11 @@ fetch('http://localhost:3000/api/teddies') /*+localStorage.getItem("idCourrant")
 		el[el.length-1].appendChild(img);
 
 		let pNom = document.createElement("p");
-		pNom.textContent = 'Nom : ' + bc.name;
+		pNom.textContent =  bc.name;
 		el[el.length-1].appendChild(pNom);
 		
 		let pPrix = document.createElement("p");
-		pPrix.textContent = 'Prix : ' + bc.price + '€';
+		pPrix.textContent =  bc.price + '€';
 		el[el.length-1].appendChild(pPrix);
 
 		el[el.length-1].onclick = () => {
@@ -36,21 +36,7 @@ fetch('http://localhost:3000/api/teddies') /*+localStorage.getItem("idCourrant")
 	home.appendChild(pPanier);
 
 	
-	
-		/* el.push(document.createElement("div"))
-		el[el.length-1].innerHTML = "<img src=" + bc.imageUrl + "";
-		document.querySelector(".container").appendChild(el[el.length-1]);
 
-	*/	
-
-	
-
-
-		 /*el.push(document.createElement("img"))
-		el[el.length-1].textContent = bc.imageUrl;
-		document.querySelector(".container").appendChild(el[el.length-1]);
-		el.push(document.createElement("div"))
-		document.querySelector(".container").appendChild(el[el.length-1]); */
 }
 )
 
@@ -62,24 +48,3 @@ fetch('http://localhost:3000/api/teddies') /*+localStorage.getItem("idCourrant")
 
 
 
-
-
-
-/*  =====================================================================================================
-EXEMPLE API 
-const img = document.getElementById('img');
-
-fetch('https://api.thecatapi.com/v1/images/search/11')
-	.then(res => {
-		if(res.ok){
-			res.json().then(data => {
-				img.src = data[0].url
-			})
-		} else {
-			console.log("ERREUR");
-			document.getElementById('apifail').innerHTML = "Une erreur est survenue avec l'api."
-		}
-	})
-	.then(data => img.src = data[0].url)
-=====================================================================================================================
-	*/
