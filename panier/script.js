@@ -1,18 +1,20 @@
 formulaire.onsubmit = (e) => {
-  localStorage.setItem("total",total);
+  localStorage.setItem("total", total);
   e.preventDefault();
+  // Récupération des éléments du panier
   let products = [];
   for (let cur of JSON.parse(localStorage.getItem("panier"))) {
     products.push(cur._id);
   }
+  // Récupération des réponses au formulaire
   const firstName = e.target[0].value;
   const lastName = e.target[1].value;
   const address = e.target[2].value;
   const city = e.target[3].value;
   const email = e.target[4].value;
-  console.log(firstName, lastName, address, city, email);
 
-  let form = JSON.stringify( {
+  // Préparation de ce que l'on va envoyer à l'API
+  let form = JSON.stringify({
     contact: {
       firstName,
       lastName,
@@ -22,28 +24,25 @@ formulaire.onsubmit = (e) => {
     },
     products: products,
   });
-  console.log(form);
+  // Définition des options de la requête fetch
 
   let postOptions = {
     method: "POST",
     body: form,
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
-  }
+  };
 
   fetch("http://localhost:3000/api/teddies/order", postOptions)
-  
-  .then((response) => response.json())
-  .then((json) => {
-    console.log(json)
-
-    localStorage.setItem("order_Id","["+JSON.stringify(json)+"]");
-    location.href="../order/order.html"
-
-  })
+    .then((response) => response.json())
+    .then((json) => {
+      // Stockage des infos que l'api nous renvoie
+      localStorage.setItem("order_Id", "[" + JSON.stringify(json) + "]");
+      location.href = "../order/order.html";
+    });
 };
-
+// Gestion du panier
 let panier = JSON.parse(localStorage.getItem("panier"));
 console.log(panier.length);
 let pPanier = document.createElement("strong");
@@ -52,6 +51,7 @@ pPanier.className = "nb_panier";
 let home = document.getElementById("panier");
 home.appendChild(pPanier);
 
+// Affichage des éléments du panier
 let total = 0;
 let el = [];
 for (let bc of JSON.parse(localStorage.getItem("panier"))) {
@@ -73,11 +73,7 @@ for (let bc of JSON.parse(localStorage.getItem("panier"))) {
   el[el.length - 1].appendChild(pPrix);
 
   total = total + bc.price;
-
-
 }
-
-console.log(total);
 
 let pDivTotal = document.createElement("div");
 pDivTotal.className = "DivTotal";
